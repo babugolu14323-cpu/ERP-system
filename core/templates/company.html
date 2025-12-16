@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Company Profile | Smart ERP</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(120deg, #eef2f7, #f8f9fc);
+            font-family: 'Poppins', sans-serif;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        .page-title {
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #4e73df;
+        }
+
+        .profile-card {
+            border: none;
+            border-radius: 20px;
+            padding: 35px;
+            background: linear-gradient(145deg, #ffffff, #f1f3f8);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            animation: slideUp 0.7s ease;
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-header i {
+            font-size: 60px;
+            color: #4e73df;
+            margin-bottom: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        .profile-header h4 {
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            background: #ffffff;
+            transition: 0.3s;
+        }
+
+        .info-row:hover {
+            transform: translateX(8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4e73df, #1cc88a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 20px;
+            margin-right: 20px;
+        }
+
+        .info-text b {
+            color: #4e73df;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            display: inline-block;
+            background: linear-gradient(135deg, #4e73df, #1cc88a);
+            color: #fff;
+            padding: 10px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            color: #fff;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container mt-5 mb-5">
+    <h2 class="page-title">
+        <i class="fas fa-building me-2"></i>Company Profile
+    </h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <div class="profile-card">
+
+                <div class="profile-header">
+                    <i class="fas fa-city"></i>
+                    <h4>{{ company.name }}</h4>
+                </div>
+
+                <div class="info-row">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-text">
+                        <b>Address:</b> {{ company.address }}
+                    </div>
+                </div>
+
+                <div class="info-row">
+                    <div class="info-icon">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <div class="info-text">
+                        <b>GST Number:</b> {{ company.gst_number }}
+                    </div>
+                </div>
+
+                <div class="info-row">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-text">
+                        <b>Email:</b> {{ company.email }}
+                    </div>
+                </div>
+
+                <div class="info-row">
+                    <div class="info-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="info-text">
+                        <b>Phone:</b> {{ company.phone }}
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <a href="/dashboard/" class="back-btn">
+                        <i class="fas fa-arrow-left me-2"></i>Back to Dashboard
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
